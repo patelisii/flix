@@ -14,6 +14,8 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
+    @IBOutlet var tapPoster: UITapGestureRecognizer!
+    
     
     var movie: [String:Any]!
     
@@ -35,7 +37,14 @@ class MovieDetailsViewController: UIViewController {
         backdrop.af_setImage(withURL: backdropUrl!)
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        
+        let trailerViewController = segue.destination as! TrailerViewController
+        trailerViewController.movie_id = movie["id"] as! String
+        
+        
+    }
 
     /*
     // MARK: - Navigation

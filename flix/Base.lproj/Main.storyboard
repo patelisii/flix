@@ -135,6 +135,7 @@
                                         <size key="customSize" width="202" height="300"/>
                                         <connections>
                                             <outlet property="posterView" destination="cjN-nE-vTG" id="Uvm-AY-KGY"/>
+                                            <segue destination="vR5-1u-dQ0" kind="show" id="1x0-Ic-tdQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -167,6 +168,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uG-3T-70p">
                                 <rect key="frame" x="10" y="230" width="123" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FD-Av-c8h">
                                 <rect key="frame" x="151" y="334" width="253" height="74"/>
@@ -196,7 +198,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAY-Yx-f6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1511"/>
+            <point key="canvasLocation" x="567" y="1544"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="xoa-a5-2LD">
+            <objects>
+                <viewController id="rMh-bl-Jrl" customClass="TrailerViewController" customModule="flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jPK-06-Z5T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZN-cJ-mSq">
+                                <rect key="frame" x="0.0" y="91" width="414" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MHw-Ks-s9B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z0q-uA-Mgd"/>
+                    <connections>
+                        <outlet property="trailer" destination="PZN-cJ-mSq" id="Glv-q0-kio"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7s-sG-iWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560.86956521739137" y="2199.7767857142858"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="f5o-TZ-3ea">
@@ -218,6 +250,9 @@
             <point key="canvasLocation" x="1021.7391304347827" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PkJ-8W-Odb"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
